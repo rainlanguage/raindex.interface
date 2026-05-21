@@ -15,7 +15,7 @@ import {
 
     //forge-lint: disable-next-line(unused-import)
     IInterpreterStoreV3
-} from "rain.interpreter.interface/interface/IInterpreterCallerV4.sol";
+} from "rain-interpreter-interface-0.1.0/src/interface/IInterpreterCallerV4.sol";
 
 /// Import unmodified structures from older versions of the Raindex interface.
 import {
@@ -31,7 +31,7 @@ import {
     QuoteV2
 } from "./deprecated/v5/IOrderBookV5.sol";
 
-import {Float} from "rain.math.float/lib/LibDecimalFloat.sol";
+import {Float} from "rain-math-float-0.1.1/src/lib/LibDecimalFloat.sol";
 
 /// Config for a list of orders to take sequentially as part of a `takeOrders`
 /// call.
