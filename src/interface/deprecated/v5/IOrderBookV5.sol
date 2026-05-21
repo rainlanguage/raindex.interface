@@ -11,7 +11,7 @@ import {
     IInterpreterV4,
     //forge-lint: disable-next-line(unused-import)
     IInterpreterStoreV3
-} from "../../../../lib/rain.interpreter.interface/src/interface/IInterpreterCallerV4.sol";
+} from "rain.interpreter.interface/interface/IInterpreterCallerV4.sol";
 
 /// Import unmodified structures from older versions of `IOrderBook`.
 //forge-lint: disable-start(unused-import)

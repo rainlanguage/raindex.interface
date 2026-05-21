@@ -1,7 +1,7 @@
 [profile.default]
 src = 'src'
 out = 'out'
-libs = ['lib']
+libs = ['dependencies']
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
 
@@ -24,8 +24,17 @@ cbor_metadata = false
 evm_version = "cancun"
 
 remappings = [
-  "rain.math.float/=lib/rain.interpreter.interface/lib/rain.math.float/src/"
+  "rain.interpreter.interface/=dependencies/rain-interpreter-interface-0.1.0/src/",
+  "rain.math.float/=dependencies/rain-math-float-0.1.1/src/",
 ]
+
+[dependencies]
+forge-std = "1.16.1"
+rain-interpreter-interface = "0.1.0"
+rain-math-float = "0.1.1"
+
+[soldeer]
+recursive_deps = false
 
 [fuzz]
 runs = 2048
