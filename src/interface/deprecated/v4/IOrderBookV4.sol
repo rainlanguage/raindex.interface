@@ -7,11 +7,13 @@ import {
     EvaluableV3,
     IInterpreterCallerV3,
     SignedContextV1,
+
     //forge-lint: disable-next-line(unused-import)
     IInterpreterV3,
+
     //forge-lint: disable-next-line(unused-import)
     IInterpreterStoreV2
-} from "../../../../lib/rain.interpreter.interface/src/interface/deprecated/v2/IInterpreterCallerV3.sol";
+} from "rain.interpreter.interface/interface/deprecated/v2/IInterpreterCallerV3.sol";
 
 /// Import unmodified structures from older versions of `IOrderBook`.
 import {ClearStateChange, ClearConfig, IO} from "../v3/IOrderBookV3.sol";
@@ -475,10 +477,7 @@ interface IOrderBookV4 is IERC3156FlashLender, IInterpreterCallerV3 {
     /// Is `0` if the order does not exist.
     /// @return ioRatio The input:output ratio of the order. Is `0` if the order
     /// does not exist.
-    function quote(Quote calldata quoteConfig)
-        external
-        view
-        returns (bool exists, uint256 outputMax, uint256 ioRatio);
+    function quote(Quote calldata quoteConfig) external view returns (bool exists, uint256 outputMax, uint256 ioRatio);
 
     /// Given an order config, deploys the expression and builds the full `Order`
     /// for the config, then records it as an active order. Delegated adding an
@@ -560,9 +559,7 @@ interface IOrderBookV4 is IERC3156FlashLender, IInterpreterCallerV3 {
     /// vaults processed.
     /// @return totalOutput Total tokens taken from `msg.sender` and distributed
     /// between vaults.
-    function takeOrders2(TakeOrdersConfigV3 calldata config)
-        external
-        returns (uint256 totalInput, uint256 totalOutput);
+    function takeOrders2(TakeOrdersConfigV3 calldata config) external returns (uint256 totalInput, uint256 totalOutput);
 
     /// Allows `msg.sender` to match two live orders placed earlier by
     /// non-interactive parties and claim a bounty in the process. The clearer is

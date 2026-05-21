@@ -7,6 +7,7 @@ import {
     TakeOrdersConfigV4,
     IOrderBookV5,
     TaskV2,
+
     //forge-lint: disable-next-line(unused-import)
     EvaluableV4
 } from "./IOrderBookV5.sol";
@@ -22,7 +23,5 @@ interface IOrderBookV5ArbOrderTaker is IOrderBookV5OrderTaker {
     /// @param orderBook The orderbook to arb against.
     /// @param takeOrders Config for the orders to take.
     /// @param task Post-arb task to evaluate.
-    function arb4(IOrderBookV5 orderBook, TakeOrdersConfigV4 calldata takeOrders, TaskV2 calldata task)
-        external
-        payable;
+    function arb4(IOrderBookV5 orderBook, TakeOrdersConfigV4 calldata takeOrders, TaskV2 calldata task) external payable;
 }
