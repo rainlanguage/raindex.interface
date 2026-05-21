@@ -9,7 +9,9 @@ import {
     IInterpreterCallerV2,
     SignedContextV1
 } from "rain-interpreter-interface-0.1.0/src/interface/deprecated/v1/IInterpreterCallerV2.sol";
-import {IExpressionDeployerV3} from "rain-interpreter-interface-0.1.0/src/interface/deprecated/v1/IExpressionDeployerV3.sol";
+import {
+    IExpressionDeployerV3
+} from "rain-interpreter-interface-0.1.0/src/interface/deprecated/v1/IExpressionDeployerV3.sol";
 
 /// Import unmodified structures from older versions of `IOrderBook`.
 import {IO, ClearConfig, ClearStateChange} from "../v2/IOrderBookV2.sol";
