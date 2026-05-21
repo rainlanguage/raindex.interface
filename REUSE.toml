@@ -17,6 +17,7 @@ path = [
   "foundry.lock",
   "remappings.txt",
   "soldeer.lock",
+  ".soldeerignore",
 ]
 SPDX-FileCopyrightText = "Copyright (c) 2020 thedavidmeister"
 SPDX-License-Identifier = "LicenseRef-DCL-1.0"
