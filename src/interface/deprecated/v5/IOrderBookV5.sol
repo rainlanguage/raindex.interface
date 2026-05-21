@@ -13,14 +13,14 @@ import {
 
     //forge-lint: disable-next-line(unused-import)
     IInterpreterStoreV3
-} from "rain.interpreter.interface/interface/IInterpreterCallerV4.sol";
+} from "rain-interpreter-interface-0.1.0/src/interface/IInterpreterCallerV4.sol";
 
 /// Import unmodified structures from older versions of `IOrderBook`.
 //forge-lint: disable-start(unused-import)
 import {NoOrders, ZeroMaximumInput} from "../v4/IOrderBookV4.sol";
 //forge-lint: disable-end(unused-import)
 
-import {Float} from "rain.math.float/lib/LibDecimalFloat.sol";
+import {Float} from "rain-math-float-0.1.1/src/lib/LibDecimalFloat.sol";
 
 /// Summary of the vault state changes due to clearing an order. NOT the state
 /// changes sent to the interpreter store, these are the LOCAL CHANGES in vault

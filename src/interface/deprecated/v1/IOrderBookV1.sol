@@ -4,14 +4,14 @@ pragma solidity ^0.8.18;
 
 import {IERC3156FlashLender} from "../../ierc3156/IERC3156FlashLender.sol";
 //forge-lint: disable-next-line(unused-import)
-import {LibEvaluable} from "rain.interpreter.interface/lib/caller/LibEvaluable.sol";
+import {LibEvaluable} from "rain-interpreter-interface-0.1.0/src/lib/caller/LibEvaluable.sol";
 import {
     EvaluableConfig,
     Evaluable,
     SignedContext,
     IInterpreterCallerV1
-} from "rain.interpreter.interface/interface/deprecated/v1/IInterpreterCallerV1.sol";
-import {IExpressionDeployerV3} from "rain.interpreter.interface/interface/deprecated/v1/IExpressionDeployerV3.sol";
+} from "rain-interpreter-interface-0.1.0/src/interface/deprecated/v1/IInterpreterCallerV1.sol";
+import {IExpressionDeployerV3} from "rain-interpreter-interface-0.1.0/src/interface/deprecated/v1/IExpressionDeployerV3.sol";
 
 /// Configuration for a deposit. All deposits are processed by and for
 /// `msg.sender` so the vaults are unambiguous here.
