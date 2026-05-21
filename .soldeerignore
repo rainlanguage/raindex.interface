@@ -1,7 +1,23 @@
-# Soldeer flags .gitignore and foundry.lock as "sensitive" and prompts
-# for interactive confirmation on push. CI doesn't have a TTY, so the
-# prompt fails with "not connected" and the publish dies. Neither file
-# is actually sensitive (no secrets), but consumers of the package have
-# no use for them either — just skip them.
+.DS_Store
+.coderabbitai.yaml
+.gas-snapshot
+.git
+.github
 .gitignore
-foundry.lock
+.gitmodules
+.pre-commit-config.yaml
+.soldeerignore
+.vscode
+CLAUDE.md
+/audit
+/cache
+/dependencies
+/flake.lock
+/flake.nix
+/foundry.lock
+/foundry.toml
+/out
+/remappings.txt
+/slither.config.json
+/soldeer.lock
+/REUSE.toml
