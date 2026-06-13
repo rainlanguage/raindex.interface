@@ -452,9 +452,13 @@ interface IRaindexV6 is IERC3156FlashLender, IInterpreterCallerV4 {
 
     /// Order owner can remove their own orders. Delegated order removal is NOT
     /// supported and will revert. Removing an order multiple times or removing
-    /// an order that never existed are valid, the event will be emitted and the
-    /// transaction will complete with that order hash definitely, redundantly
-    /// not live.
+    /// an order that never existed are valid; the transaction will complete
+    /// with that order hash definitely, redundantly not live.
+    ///
+    /// If a live order is removed the Raindex MUST change state, emit a
+    /// `RemoveOrderV3` event and return true. If the order is not live the
+    /// Raindex MUST NOT change state, which includes not emitting an event.
+    /// Instead it MUST return false.
     ///
     /// @param order The `Order` data exactly as it was added.
     /// @param tasks Additional tasks to run after the order is removed.
