@@ -225,6 +225,10 @@ interface IRaindexV6 is IERC3156FlashLender, IInterpreterCallerV4 {
     /// MUST be thrown when take orders is called with no orders.
     error NoOrders();
 
+    /// MUST be thrown by `quote2`, `takeOrders4`, and `clear3` if the order's
+    /// input token and output token are identical (self-trade).
+    error TokenSelfTrade();
+
     /// Some tokens have been deposited to a vault.
     /// @param sender `msg.sender` depositing tokens. Delegated deposits are NOT
     /// supported.
@@ -409,6 +413,8 @@ interface IRaindexV6 is IERC3156FlashLender, IInterpreterCallerV4 {
     /// Both the output max and io ratio are returned as rain floating point
     /// values, ignoring any token decimals, so are not the literal amounts that
     /// would be moved in the order were it to clear.
+    /// @dev MUST revert with {TokenSelfTrade} if the order specifies the same
+    /// token as both its input and output (self-trade).
     /// @param quoteConfig The configuration for the quote.
     /// @return exists True if the order exists, false otherwise.
     /// @return outputMax The maximum output amount that the order could send.
@@ -505,6 +511,8 @@ interface IRaindexV6 is IERC3156FlashLender, IInterpreterCallerV4 {
     /// provided. Inputs and outputs are from the perspective of `msg.sender`
     /// except for values specified by the orders themselves which are the from
     /// the perspective of that order.
+    /// @dev Per-order: MUST revert with {TokenSelfTrade} if any order specifies
+    /// the same token as both its input and output.
     /// @return totalTakerInput Total tokens sent to `msg.sender`, taken from order
     /// vaults processed.
     /// @return totalTakerOutput Total tokens taken from `msg.sender` and distributed
@@ -554,6 +562,8 @@ interface IRaindexV6 is IERC3156FlashLender, IInterpreterCallerV4 {
     /// - Geopolitical issues such as sanctions and regulatory restrictions could
     ///   cause issues for certain owners and clearers
     ///
+    /// @dev MUST revert with {TokenSelfTrade} if either order specifies the same
+    /// token as both its input and output.
     /// @param alice Some order to clear.
     /// @param bob Another order to clear.
     /// @param clearConfig Additional configuration for the clearance such as
