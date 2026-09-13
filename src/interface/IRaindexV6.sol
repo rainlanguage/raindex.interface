@@ -31,7 +31,7 @@ import {
     QuoteV2
 } from "./deprecated/v5/IOrderBookV5.sol";
 
-import {Float} from "rain-math-float-0.1.1/src/lib/LibDecimalFloat.sol";
+import {Float} from "rain-math-float-0.2.1/src/lib/LibDecimalFloat.sol";
 
 /// Config for a list of orders to take sequentially as part of a `takeOrders`
 /// call.

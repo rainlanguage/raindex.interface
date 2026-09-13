@@ -2,7 +2,7 @@
 forge-std-1.16.1/=dependencies/forge-std-1.16.1/
 rain-lib-hash-0.1.0/=dependencies/rain-lib-hash-0.1.0/
 rain-math-binary-0.1.4/=dependencies/rain-math-binary-0.1.4/
-rain-math-float-0.1.1/=dependencies/rain-math-float-0.1.1/
+rain-math-float-0.2.1/=dependencies/rain-math-float-0.2.1/
 rain-sol-codegen-0.1.0/=dependencies/rain-sol-codegen-0.1.0/
 rain-solmem-0.1.28/=dependencies/rain-solmem-0.1.28/
 rainlang-interface-0.2.8/=dependencies/rainlang-interface-0.2.8/
