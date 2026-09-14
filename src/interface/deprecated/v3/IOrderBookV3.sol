@@ -8,8 +8,8 @@ import {
     EvaluableConfigV3,
     IInterpreterCallerV2,
     SignedContextV1
-} from "rainlang-interface-0.2.8/src/interface/deprecated/v1/IInterpreterCallerV2.sol";
-import {IExpressionDeployerV3} from "rainlang-interface-0.2.8/src/interface/deprecated/v1/IExpressionDeployerV3.sol";
+} from "rainlang-interface-0.2.9/src/interface/deprecated/v1/IInterpreterCallerV2.sol";
+import {IExpressionDeployerV3} from "rainlang-interface-0.2.9/src/interface/deprecated/v1/IExpressionDeployerV3.sol";
 
 /// Import unmodified structures from older versions of `IOrderBook`.
 import {IO, ClearConfig, ClearStateChange} from "../v2/IOrderBookV2.sol";

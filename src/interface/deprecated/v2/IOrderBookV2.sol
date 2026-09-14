@@ -6,12 +6,12 @@ import {IERC3156FlashLender} from "../../ierc3156/IERC3156FlashLender.sol";
 import {
     EvaluableConfig,
     Evaluable
-} from "rainlang-interface-0.2.8/src/interface/deprecated/v1/IInterpreterCallerV1.sol";
+} from "rainlang-interface-0.2.9/src/interface/deprecated/v1/IInterpreterCallerV1.sol";
 import {
     SignedContextV1,
     IInterpreterCallerV2
-} from "rainlang-interface-0.2.8/src/interface/deprecated/v1/IInterpreterCallerV2.sol";
-import {IExpressionDeployerV2} from "rainlang-interface-0.2.8/src/interface/deprecated/v1/IExpressionDeployerV2.sol";
+} from "rainlang-interface-0.2.9/src/interface/deprecated/v1/IInterpreterCallerV2.sol";
+import {IExpressionDeployerV2} from "rainlang-interface-0.2.9/src/interface/deprecated/v1/IExpressionDeployerV2.sol";
 
 /// Configuration for a deposit. All deposits are processed by and for
 /// `msg.sender` so the vaults are unambiguous here.
