@@ -13,7 +13,7 @@ import {
 
     //forge-lint: disable-next-line(unused-import)
     IInterpreterStoreV2
-} from "rainlang-interface-0.2.8/src/interface/deprecated/v2/IInterpreterCallerV3.sol";
+} from "rainlang-interface-0.2.9/src/interface/deprecated/v2/IInterpreterCallerV3.sol";
 
 /// Import unmodified structures from older versions of `IOrderBook`.
 import {ClearStateChange, ClearConfig, IO} from "../v3/IOrderBookV3.sol";
