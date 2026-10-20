@@ -12,12 +12,12 @@ going to the clearer as a bounty.
 Traditional onchain order books (e.g. dYdX, Serum) replicate the familiar
 limit-order model: users place fixed-price bids and asks, a matching engine
 pairs them, and fills execute at the stated price. This works, but each
-repricing requires a new transaction, making active market-making expensive
-and slow.
+repricing requires a new transaction, making active market-making expensive and
+slow.
 
-Raindex replaces static prices with executable expressions. An order's ratio
-and maximum amount are computed fresh every time someone attempts to match it.
-The expression can read any onchain state — block number, oracle feeds, vault
+Raindex replaces static prices with executable expressions. An order's ratio and
+maximum amount are computed fresh every time someone attempts to match it. The
+expression can read any onchain state — block number, oracle feeds, vault
 balances, its own persistent storage — so a single order can implement
 strategies that would otherwise require off-chain bots continuously cancelling
 and reposting.
@@ -36,8 +36,7 @@ bonding curve imposing a single price on all participants. Because orders
 evaluate independently, one user's strategy cannot dilute or override another's.
 Clearers (analogous to AMM arbitrageurs) match overlapping orders and keep the
 surplus, providing the same "always available" clearing incentive that
-arbitrageurs provide to AMMs, but without requiring passive LPs to share a
-pool.
+arbitrageurs provide to AMMs, but without requiring passive LPs to share a pool.
 
 This repo defines the Solidity interfaces and types for Raindex. It does not
 contain the implementation.
@@ -58,7 +57,8 @@ CI usage.
 
 ## Legal stuff
 
-Everything is under DecentraLicense 1.0 (DCL-1.0) which can be found in `LICENSES/`.
+Everything is under DecentraLicense 1.0 (DCL-1.0) which can be found in
+`LICENSES/`.
 
 This is basically `CAL-1.0` which is an open source license
 https://opensource.org/license/cal-1-0
@@ -70,8 +70,8 @@ to those users as relevant, and that private keys remain private.
 Roughly it's "not your keys, not your coins" aware, as close as we could get in
 legalese.
 
-This is the default situation on permissionless blockchains, so shouldn't require
-any additional effort by dev-users to adhere to the license terms.
+This is the default situation on permissionless blockchains, so shouldn't
+require any additional effort by dev-users to adhere to the license terms.
 
 This repo is REUSE 3.2 compliant https://reuse.software/spec-3.2/ and compatible
 with `reuse` tooling (also available in the nix shell here).
