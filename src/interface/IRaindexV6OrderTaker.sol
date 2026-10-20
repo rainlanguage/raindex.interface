@@ -4,36 +4,11 @@ pragma solidity ^0.8.18;
 
 import {Float} from "./IRaindexV6.sol";
 
-/// @title IRaindexV6OrderTaker
-/// @notice Interface for contracts that wish to `takeOrders` from an
-/// `IRaindexV6` contract and receive a callback between the input being
-/// sent and output being taken.
-///
-/// SECURITY: This callback executes mid-transaction, after input tokens
-/// have been sent to the taker but before output tokens are pulled.
-/// Implementations MUST NOT re-enter the Raindex (e.g. via takeOrders,
-/// withdraw, or clear) during this callback. Raindex implementations
-/// MUST use reentrancy guards to protect against malicious callbacks.
-/// Implementations MUST validate that `msg.sender` is the trusted
-/// Raindex contract.
 interface IRaindexV6OrderTaker {
-    /// @notice Called by `IRaindexV6` when `takeOrders` is called with
-    /// non-zero data, if it caused a non-zero input amount. I.e. if the order(s)
-    /// taker received some tokens. Input and output directions are relative to
-    /// the `IRaindexV6OrderTaker` contract. If the order(s) taker had an
-    /// active debt from a flash loan then that debt will be paid _before_
-    /// calculating any input amounts sent.
-    /// i.e. the debt is deducted from the input amount before this callback is
-    /// called.
-    /// @param inputToken The token that was sent to `IRaindexV6OrderTaker`.
-    /// @param outputToken The token that `IRaindexV6` will attempt to pull
-    /// from `IRaindexV6OrderTaker` after this callback returns.
-    /// @param inputAmountSent The amount of `inputToken` that was sent to
-    /// `IRaindexV6OrderTaker`.
-    /// @param totalOutputAmount The total amount of `outputToken` that
-    /// `IRaindexV6` will attempt to pull from `IRaindexV6OrderTaker` after
-    /// this callback returns.
-    /// @param takeOrdersData The data passed to `takeOrders` by the caller.
+    /// Called by `takeOrders4` when its `data` is non-empty and input is
+    /// nonzero, after input is sent (net of any flash loan debt) and before
+    /// output is pulled. Implementations MUST validate `msg.sender` and MUST
+    /// NOT re-enter the Raindex.
     function onTakeOrders2(
         address inputToken,
         address outputToken,

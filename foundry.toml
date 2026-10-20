@@ -28,13 +28,13 @@ cbor_metadata = false
 evm_version = "cancun"
 
 [dependencies]
-forge-std = "1.16.1"
-"rainlang-interface" = "0.2.9"
-rain-math-float = "0.2.1"
-"@openzeppelin-contracts" = "5.6.1"
-rain-lib-hash = "0.1.0"
+forge-std = "1.17.0"
+"rainlang-interface" = "0.2.13"
+rain-math-float = "0.3.10"
+"@openzeppelin-contracts" = "5.7.0"
+rain-lib-hash = "0.1.27"
 rain-math-binary = "0.1.4"
-rain-sol-codegen = "0.1.37"
+rain-sol-codegen = "0.1.39"
 "rain-solmem" = "0.1.28"
 
 [soldeer]
