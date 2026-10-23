@@ -52,11 +52,16 @@ struct TakeOrdersConfigV5 {
 }
 
 /// @title IRaindexV6
-/// @notice Orderbook of expression-defined orders over per-owner, per-token
-/// vaults. Amounts and IO ratios (input:output) are Floats, converted via the
-/// token's `decimals` only when tokens move; tokens without constant
-/// `decimals` or whose balances do not move 1:1 with transfers are unsupported.
-/// Clears move only internal vault balances. Rounding favours the order.
+/// @notice Raindex is an order book of expression-defined orders over
+/// per-owner, per-token vaults. Amounts and IO ratios (input:output) are
+/// Floats, converted via the token's `decimals` only when tokens move; tokens
+/// without constant `decimals` are unsupported. Clears move only internal vault
+/// balances, except for vault `0` IO. Rounding favours the order.
+/// REBASING, FEE-ON-TRANSFER AND OTHER DYNAMIC BALANCE TOKENS ARE NOT
+/// SUPPORTED. Raindex ONLY WORKS IF TOKEN BALANCES ARE 1:1 WITH
+/// ADDITION/SUBTRACTION PER VAULT MOVEMENT: vaults are credited the requested
+/// amount, not the amount received, so a fee-on-transfer deposit credits more
+/// than Raindex receives.
 /// Orders stay live until removed. Expression storage is namespaced by order
 /// owner. Interpreters and stores are untrusted. All vault balances are
 /// available as zero-fee ERC3156 flash loans; `withdraw4` and `takeOrders4`
