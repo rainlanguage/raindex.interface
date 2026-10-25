@@ -30,28 +30,11 @@ import {
     QuoteV2
 } from "./deprecated/v5/IOrderBookV5.sol";
 
+import {TakeOrdersConfigV5} from "./deprecated/v6/IRaindexV6.sol";
+
 import {Float} from "rain-math-float-0.3.10/src/lib/LibDecimalFloat.sol";
 
-/// @param minimumIO Taker's minimum total input or output; reverts if unmet.
-/// @param maximumIO Taker's maximum total input or output.
-/// @param maximumIORatio Max IO ratio per order, from the order's perspective.
-/// @param IOIsInput Whether `minimumIO`/`maximumIO` bound taker input or output.
-/// @param orders Taken in sequence as given; no onchain sorting.
-/// @param data If non-empty, `onTakeOrders2` is called on the taker with it.
-struct TakeOrdersConfigV5 {
-    //forge-lint: disable-next-line(mixed-case-variable)
-    Float minimumIO;
-    //forge-lint: disable-next-line(mixed-case-variable)
-    Float maximumIO;
-    //forge-lint: disable-next-line(mixed-case-variable)
-    Float maximumIORatio;
-    //forge-lint: disable-next-line(mixed-case-variable)
-    bool IOIsInput;
-    TakeOrderConfigV4[] orders;
-    bytes data;
-}
-
-/// @title IRaindexV6
+/// @title IRaindexV7
 /// @notice Raindex is an order book of expression-defined orders over
 /// per-owner, per-token vaults. Amounts and IO ratios (input:output) are
 /// Floats, converted via the token's `decimals` only when tokens move; tokens
@@ -67,7 +50,7 @@ struct TakeOrdersConfigV5 {
 /// available as zero-fee ERC3156 flash loans; `withdraw4` and `takeOrders4`
 /// repay the caller's loan before sending tokens. Vault ID `0` denotes a
 /// vaultless IO that moves tokens directly from or to the owner's wallet.
-interface IRaindexV6 is IERC3156FlashLender, IInterpreterCallerV4 {
+interface IRaindexV7 is IERC3156FlashLender, IInterpreterCallerV4 {
     error ZeroVaultId(address sender, address token);
 
     error ZeroDepositAmount(address sender, address token, bytes32 vaultId);
@@ -170,7 +153,9 @@ interface IRaindexV6 is IERC3156FlashLender, IInterpreterCallerV4 {
     /// Matches two live orders from different owners; the ratio spread is paid
     /// to `msg.sender`'s vaults per `clearConfig`. Reverts `TokenSelfTrade`,
     /// or if either order's input exceeds the other's output.
-    function clear3(
+    /// @param aliceSignedContext Signed context for `alice`'s own eval.
+    /// @param bobSignedContext Signed context for `bob`'s own eval.
+    function clear4(
         OrderV4 memory alice,
         OrderV4 memory bob,
         ClearConfigV2 calldata clearConfig,
