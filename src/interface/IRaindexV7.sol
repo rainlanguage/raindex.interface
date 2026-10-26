@@ -103,9 +103,8 @@ interface IRaindexV7 is IERC3156FlashLender, IInterpreterCallerV4 {
     /// The order is skipped rather than reverting the batch.
     event OrderExceedsMaxRatio(address sender, address owner, bytes32 orderHash);
 
-    /// The order's calculate eval reverted, had no interpreter code, returned
-    /// undecodable data or too few outputs. The order is skipped rather than
-    /// reverting the batch.
+    /// The order's calculate eval reverted or returned too few outputs. The
+    /// order is skipped rather than reverting the batch.
     event OrderCalculateReverted(address sender, address owner, bytes32 orderHash);
 
     /// Emitted before calculation.
