@@ -30,7 +30,7 @@ evm_version = "cancun"
 [dependencies]
 forge-std = "1.17.0"
 rainlang = "0.2.27"
-rain-math-float = "0.3.10"
+rain-math-float = "0.3.11"
 
 [soldeer]
 recursive_deps = false

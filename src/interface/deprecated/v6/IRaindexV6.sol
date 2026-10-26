@@ -30,7 +30,7 @@ import {
     QuoteV2
 } from "../v5/IOrderBookV5.sol";
 
-import {Float} from "rain-math-float-0.3.10/src/lib/LibDecimalFloat.sol";
+import {Float} from "rain-math-float-0.3.11/src/lib/LibDecimalFloat.sol";
 
 /// @param minimumIO Taker's minimum total input or output; reverts if unmet.
 /// @param maximumIO Taker's maximum total input or output.

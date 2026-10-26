@@ -25,7 +25,7 @@ import {
     OrderV4
 } from "./deprecated/v5/IOrderBookV5.sol";
 
-import {Float} from "rain-math-float-0.3.10/src/lib/LibDecimalFloat.sol";
+import {Float} from "rain-math-float-0.3.11/src/lib/LibDecimalFloat.sol";
 
 /// Evaluable run after the primary call, e.g. by governance wrappers or fee
 /// collectors.
