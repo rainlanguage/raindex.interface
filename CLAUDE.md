@@ -34,17 +34,17 @@ tests run 2048 iterations.
 
 ### Interfaces (`src/interface/`)
 
-- **IRaindexV6** — Current stable interface. Vault-based order book with
+- **IRaindexV7** — Current stable interface. Vault-based order book with
   deposit/withdraw, add/remove orders, take orders (market buy), and clear
   (match two orders with bounty). IERC3156 flash loan compliant. Supports
   vaultless orders (vault ID `0` means tokens move directly from wallet) and
   input/output-based take order limits via `IOIsInput` flag.
-- **IRaindexV6OrderTaker / IRaindexV6ArbOrderTaker** — Callback interfaces for
+- **IRaindexV7OrderTaker / IRaindexV7ArbOrderTaker** — Callback interfaces for
   takers receiving tokens during `takeOrders`.
 - **ierc3156/** — Flash loan interfaces (IERC3156FlashLender,
   IERC3156FlashBorrower).
-- **deprecated/** (v1-v5) — Old interface versions. Do not modify unless
-  undeprecating.
+- **deprecated/** (v1-v6) — Old interface versions. Only import paths may change
+  (relocation, dependency bumps); declarations are frozen unless undeprecating.
 
 ### Interface Lifecycle
 
@@ -63,8 +63,8 @@ move.
   valid inputs/outputs, nonce
 - `OrderConfigV4` — Config for adding an order, includes meta and secret
 - `IOV2` — Input/output config: token address + vault ID
-- `TaskV2` — Evaluable + signed context, for post-operation callbacks
-- `TakeOrdersConfigV4` / `TakeOrdersConfigV5` — Config for batch taking orders
+- `TaskV3` — Evaluable + `SignedContextV2`, for post-operation callbacks
+- `TakeOrdersConfigV6` / `TakeOrderConfigV5` — Config for batch taking orders
 - `ClearConfigV2` / `ClearStateChangeV2` — Config and result for clearing two
   matched orders
 
@@ -85,8 +85,8 @@ declares everything `rainlang-interface`'s own src imports
   string messages.
 - Interfaces use `pragma solidity ^0.8.18` (note: differs from interpreter
   interface which uses `^0.8.25`).
-- Versioned naming: interfaces (`IRaindexV6`), structs (`OrderV4`,
-  `ClearConfigV2`), events (`AddOrderV3`), functions (`deposit4`, `withdraw4`).
+- Versioned naming: interfaces (`IRaindexV7`), structs (`OrderV4`,
+  `ClearConfigV2`), events (`AddOrderV3`), functions (`deposit5`, `withdraw5`).
 - Use `//forge-lint: disable-next-line(...)` comments for lint suppressions:
   `unused-import`, `mixed-case-variable`, `pascal-case-struct`.
 - Branch naming: `YYYY-MM-DD-description`.

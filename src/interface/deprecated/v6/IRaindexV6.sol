@@ -2,7 +2,7 @@
 // SPDX-FileCopyrightText: Copyright (c) 2020 thedavidmeister
 pragma solidity ^0.8.18;
 
-import {IERC3156FlashLender} from "./ierc3156/IERC3156FlashLender.sol";
+import {IERC3156FlashLender} from "../../ierc3156/IERC3156FlashLender.sol";
 import {
     IInterpreterCallerV4,
     SignedContextV1,
@@ -15,7 +15,7 @@ import {
 
     //forge-lint: disable-next-line(unused-import)
     IInterpreterStoreV3
-} from "rainlang-interface-0.2.13/src/interface/IInterpreterCallerV4.sol";
+} from "rainlang-interface-0.2.14/src/interface/deprecated/v3/IInterpreterCallerV4.sol";
 
 import {
     ClearStateChangeV2,
@@ -28,7 +28,7 @@ import {
     OrderV4,
     TakeOrderConfigV4,
     QuoteV2
-} from "./deprecated/v5/IOrderBookV5.sol";
+} from "../v5/IOrderBookV5.sol";
 
 import {Float} from "rain-math-float-0.3.10/src/lib/LibDecimalFloat.sol";
 
