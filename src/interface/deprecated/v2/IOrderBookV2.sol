@@ -3,10 +3,7 @@
 pragma solidity ^0.8.18;
 
 import {IERC3156FlashLender} from "../../ierc3156/IERC3156FlashLender.sol";
-import {
-    EvaluableConfig,
-    Evaluable
-} from "rainlang-0.2.27/src/interface/deprecated/v1/IInterpreterCallerV1.sol";
+import {EvaluableConfig, Evaluable} from "rainlang-0.2.27/src/interface/deprecated/v1/IInterpreterCallerV1.sol";
 import {
     SignedContextV1,
     IInterpreterCallerV2
