@@ -72,12 +72,9 @@ move.
 
 Soldeer packages, declared in `[dependencies]` in `foundry.toml` and locked in
 `soldeer.lock` (run `forge soldeer update` after changing them). Import paths
-carry the package version (e.g. `rainlang-interface-0.2.3/src/...`). Direct
-deps: `rainlang-interface` (Rainlang interpreter interfaces and caller libs) and
-`rain-math-float` (Float). Soldeer resolution is flat, so `[dependencies]` also
-declares everything `rainlang-interface`'s own src imports
-(`@openzeppelin-contracts`, `rain-lib-hash`, `rain-math-binary`,
-`rain-sol-codegen`, `rain-solmem`).
+carry the package version (e.g. `rainlang-0.2.27/src/...`). Direct deps:
+`rainlang` (Rainlang interpreter interfaces and caller libs, under
+`src/interface/` and `src/lib/caller/`) and `rain-math-float` (Float).
 
 ## Conventions
 
