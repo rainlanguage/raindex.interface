@@ -43,7 +43,8 @@ tests run 2048 iterations.
   takers receiving tokens during `takeOrders`.
 - **ierc3156/** — Flash loan interfaces (IERC3156FlashLender,
   IERC3156FlashBorrower).
-- **deprecated/** (v1-v6) — Old interface versions. Do not modify unless
+- **deprecated/** (v1-v6) — Old interface versions. Only import paths may
+  change (relocation, dependency bumps); declarations are frozen unless
   undeprecating.
 
 ### Interface Lifecycle
