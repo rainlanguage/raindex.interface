@@ -1,3 +1,5 @@
 forge-std-1.17.0/=dependencies/forge-std-1.17.0/
 rain-math-float-0.3.11/=dependencies/rain-math-float-0.3.11/
+rain-math-float-0.3.12/=dependencies/rain-math-float-0.3.12/
 rainlang-0.2.30/=dependencies/rainlang-0.2.30/
+rainlang-0.2.36/=dependencies/rainlang-0.2.36/
