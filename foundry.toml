@@ -31,6 +31,16 @@ evm_version = "cancun"
 forge-std = "1.17.0"
 rainlang = "0.2.37"
 rain-math-float = "0.3.13"
+rain-intorastring = "0.1.4"
+rain-lib-memkv = "0.2.0"
+rain-lib-typecast = "0.1.4"
+rain-math-binary = "0.1.4"
+rain-math-float-deploy = "0.1.11"
+rain-metadata = "0.1.46"
+rain-sol-codegen = "0.1.39"
+rain-solmem = "0.1.28"
+rain-string = "0.3.11"
+rain-tofu-erc20-decimals = "0.1.5"
 
 [soldeer]
 recursive_deps = false
