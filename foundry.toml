@@ -28,8 +28,7 @@ cbor_metadata = false
 evm_version = "cancun"
 
 [dependencies]
-forge-std = "1.17.0"
-rainlang = "0.2.37"
+rainlang = "0.2.39"
 rain-math-float = "0.3.13"
 
 [soldeer]
