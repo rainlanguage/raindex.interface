@@ -28,7 +28,7 @@ cbor_metadata = false
 evm_version = "cancun"
 
 [dependencies]
-rainlang = "0.2.39"
+rainlang = "0.2.40"
 rain-math-float = "0.3.13"
 
 [soldeer]

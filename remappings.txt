@@ -1,2 +1,2 @@
 rain-math-float-0.3.13/=dependencies/rain-math-float-0.3.13/
-rainlang-0.2.39/=dependencies/rainlang-0.2.39/
+rainlang-0.2.40/=dependencies/rainlang-0.2.40/
