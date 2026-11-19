@@ -7,7 +7,7 @@ integrity = "e0b9cfd9cf19f826b996724a61b078eea9f341183a4cd8f0a8c4e4a5599f7e8c"
 
 [[dependencies]]
 name = "rainlang"
-version = "0.2.39"
-url = "https://soldeer-revisions.s3.amazonaws.com/rainlang/0_2_39_18-11-2026_22:34:27_rainlang.zip"
-checksum = "2f04dad8cfd00575f24009b67319d1150f2ab9d708b3ec0e377d295d6ffc524d"
-integrity = "ed22563fbe3d5ea215bab792676abbfaf1dfd32d7f705bcdd320ba273aa76107"
+version = "0.2.40"
+url = "https://soldeer-revisions.s3.amazonaws.com/rainlang/0_2_40_19-11-2026_16:18:01_rainlang.zip"
+checksum = "bd890130dd768cf8848d4f8592685c64077082c3de9422f323be65d82e33b4ca"
+integrity = "37c30bd7309e0329aceecc29a69ca89d9500678a43070d0ef8de9afb12c8b1db"
